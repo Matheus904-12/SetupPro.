@@ -5,6 +5,9 @@
     box-sizing: border-box;
 }
 
+body{
+    overflow-x: hidden;
+}
 /* Estilos para o cabeçalho */  
 #header {
     background-color: #2a2a2a;
@@ -117,15 +120,7 @@ button:hover {
 
 
 /* Estilos para o carrinho */
-#cont-carrinho {
-    background-color: #FF6347;
-    color: #fff;
-    border-radius: 50%;
-    padding: 5px 10px;
-    position: absolute;
-    top: -10px;
-    right: -10px;
-}
+
 
 #carrinho-itens {
     position: absolute;
@@ -175,4 +170,8 @@ button:hover {
     height: auto;
     max-height: 200px; /* Defina a altura máxima desejada para as imagens */
     margin-bottom: 10px; /* Adicionado espaço entre a imagem e as informações */
+}
+
+#itens-lista li {
+    color: black; /* Ou a cor desejada */
 }
