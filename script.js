@@ -1,3 +1,5 @@
+/*
+
 const produtos = [
     { nome: "Logitech MX Keys S", preco: 745.00 },
     { nome: "Cadeira Ergonomic, Thunderx3, Yama1", preco: 1350.00 },
@@ -14,13 +16,15 @@ const carrinho = {
     itens: {},
     total: 0,
 };
+*/
 
-function atualizarCarrinho() {
+function atualizarCarrinho() 
+
     const listaItensCarrinho = document.getElementById("itens-lista");
     listaItensCarrinho.innerHTML = "";
 
-    for (const nome in carrinho.itens) {
-        const item = carrinho.itens[nome];
+    for (const nome in carrinho-itens) {
+        const item = carrinho-itens[nome];
         const novoItem = document.createElement("li");
         novoItem.innerHTML = `
             ${nome} - Quantidade: ${item.quantidade} - Total: R$${(item.precoTotal).toFixed(2)}
@@ -32,12 +36,17 @@ function atualizarCarrinho() {
     document.getElementById("preco-total").innerHTML = `Valor Total R$${carrinho.total.toFixed(2)}`;
 }
 
+const carrinho-itens = {}
+
 function adicionarAoCarrinho(nome, preco) {
-    if (carrinho.itens[nome]) {
-        carrinho.itens[nome].quantidade++;
-        carrinho.itens[nome].precoTotal += preco;
+    if (carrinho-itens[nome]) {
+        carrinho-itens[nome].quantidade++;
+        carrinho-itens[nome].precoTotal += preco;
+        carrinho-itens[nome].liItem.querySelector(".quantidade").innerHTML = carrinhoItens[nome].quantidade;
+
+        carrinho-itens[nome].liItem.querySelector(".precoTotal").innerHTML = carrinhoItens[nome].precoTotal.toFixed(2);
     } else {
-        carrinho.itens[nome] = {
+        carrinho-itens[nome] = {
             quantidade: 1,
             preco: preco,
             precoTotal: preco,
@@ -50,12 +59,12 @@ function adicionarAoCarrinho(nome, preco) {
 }
 
 function removerDoCarrinho(nome, preco, quantidade) {
-    if (carrinho.itens[nome]) {
+    if (carrinho-itens[nome]) {
         if (quantidade > 1) {
-            carrinho.itens[nome].quantidade--;
-            carrinho.itens[nome].precoTotal -= preco;
+            carrinho-itens[nome].quantidade--;
+            carrinho-itens[nome].precoTotal -= preco;
         } else {
-            delete carrinho.itens[nome];
+            delete carrinho-itens[nome];
         }
 
         carrinho.total -= preco;
@@ -65,7 +74,7 @@ function removerDoCarrinho(nome, preco, quantidade) {
 }
 
 function limparCarrinho() {
-    carrinho.itens = {};
+    carrinho-itens = {};
     carrinho.total = 0;
     atualizarCarrinho();
 }
